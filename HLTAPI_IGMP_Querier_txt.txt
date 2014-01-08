@@ -1,0 +1,5 @@
+sth::connect -device 10.61.44.7 -port_list {8/9 8/10}
+
+sth::interface_config -port_handle port1 -intf_ip_addr 1.1.1.10 -gateway 1.1.1.1 -netmask 255.255.0.0 -intf_mode ethernet -phy_mode copper -speed ether1000 -autonegotiation 1 -mode config -arp_send_req 0
+
+sth::emulation_igmp_querier_config -mode create -port_handle port1 -count 7 -igmp_version v2 -intf_ip_addr 1.1.1.40 -intf_ip_addr_step 0.0.0.1 -neighbor_intf_ip_addr 1.1.1.10 -neighbor_intf_ip_addr_step 0.0.0.1 -vlan_id 111 -vlan_id_count 3 -vlan_id_step 2 -vlan_id_mode increment -vlan_id_outer 101 -vlan_id_outer_count 5 -vlan_id_outer_step 2 -vlan_id_outer_mode increment
